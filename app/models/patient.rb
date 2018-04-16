@@ -1,4 +1,4 @@
 class Patient < ApplicationRecord
-	has_many :heartrate
-	has_many :event
+	has_many :heartrates
+	has_many :events
 end
