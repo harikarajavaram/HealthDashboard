@@ -1,6 +1,14 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: [:show, :update, :destroy, :patientHR, :patientHRDate]
+  before_action :set_patient, only: [:show, :update, :destroy, :patientHR, :patientHRDate, :event, :eventDate]
 
+  # GET /patient/1/event/date
+  def eventDate
+    render json: @patient.events.filter_by_date(params[:date])
+  end
+  # GET /patient/1/event
+  def event
+    render json: @patient.events
+  end
   # GET /patient/1/patientHR/date
   def patientHRDate
     render json: @patient.heartrates.filter_by_date(params[:date])

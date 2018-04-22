@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20180416111151) do
     t.string   "name"
     t.string   "event_type"
     t.integer  "patient_id"
-    t.time     "start_time"
+    t.datetime     "start_time"
     t.integer  "duration"
     t.float    "calories"
     t.datetime "created_at", null: false
